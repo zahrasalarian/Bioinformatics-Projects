@@ -57,3 +57,28 @@ WRYIAMREQYES
 --YI-MQEVQQER--
 WRYIAMRE-QYES--
 ```
+
+## main-3: MSA using PSSM profiles  
+
+This project contains an implementation of the proteins' MSA algorithm by building a version of the PSSM profile that considers the gaps too. To avoid log(0), pseudocount = 2 is used. After building the profile, a sub-sequence from the input sequence with the highest score base on the PSSM profile would be the output.  
+
+### Input and output formats  
+
+In the first line of the input comes the number of sequences in the MSA, and in the following come the sequences. In the last line comes a long sequence that the most-related sub-sequence should be detected in it (its length is at most 100.)  
+
+The output contains the desired sub-sequence.  
+
+```
+# input 
+
+4
+HVLIP
+H-MIP
+HVL-P
+LVLIP
+LIVPHHVPIPVLVIHPVLPPHIVLHHIHVHIHLPVLHIVHHLVIHLHPIVL
+
+# output
+
+H-L-P
+```
