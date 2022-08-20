@@ -15,12 +15,9 @@ def fill_profile(PSSM_profile, seqs):
     # calc score
     scored_profile = {}
     for k, v in PSSM_profile.items():
-        # print(len(seqs[0]))
-        # print(len(PSSM_profile.keys()))
         scored_profile[k] = [round(element/(len(seqs[0]) + pseudocount*len(PSSM_profile.keys())), 3) for element in v]
         _sum = sum(scored_profile[k])
         scored_profile[k] = [round(math.log(round(element/(_sum/len(seqs[0])), 3), 2), 3) for element in scored_profile[k]]
-
     return scored_profile
 
 def calc_powerset(fullset):
@@ -69,12 +66,9 @@ if __name__=="__main__":
 
     window_size = len(seqs[0])
     target_seq = input()
-    # print(seqs)
 
     PSSM_profile = {}
     pssm_profile = fill_profile(PSSM_profile, seqs)
-    # print(pssm_profile)
 
     best_sub_target, best_score = find_best_subseq(target_seq, pssm_profile)
     print(best_sub_target)
-    # print(best_score)
