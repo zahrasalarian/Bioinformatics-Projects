@@ -1,8 +1,8 @@
-# Bioinformatics Mini Projects  
+# Bioinformatics Projects  
 
 ## main-1: Semi-Global Alignment  
 
-This project contains an implementation of the proteins' Semi-Global alignment algorithm using dynamic programming and the PAM250 scoring matrix to score matches and mismatches penalties. For gaps, the constant penalty value is equal to 9.  
+This project contains an implementation of the proteins' Semi-Global alignment algorithm using dynamic programming and the PAM250 scoring matrix to score matches and mismatch penalties. For gaps, the constant penalty value is equal to 9.  
 
 ### Input and output formats  
 
